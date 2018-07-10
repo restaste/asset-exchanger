@@ -1,9 +1,9 @@
 import * as supertest from 'supertest'
-import app from './App'
+import { App } from './App'
 
 describe('App', () => {
   it('works', () =>
-    supertest(app)
+    supertest(new App('', '', []).express)
       .get('/')
       .expect('Content-Type', /json/)
       .expect(200)
